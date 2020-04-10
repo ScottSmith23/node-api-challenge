@@ -4,8 +4,8 @@ const Actions = require('../data/helpers/actionModel.js');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    Actions.get(req.query)
+router.get('/:id', (req, res) => {
+    Actions.get(req.params.id)
     .then(actions => {
       res.status(200).json(actions);
     })
@@ -17,3 +17,6 @@ router.get('/', (req, res) => {
       });
     });
   });
+
+
+  module.exports = router;

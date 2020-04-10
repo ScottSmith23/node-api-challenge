@@ -1,7 +1,7 @@
 const express = require('express');
 
 const actionRouter = require('./routerActions/actionRouter.js');
-
+const projectRouter = require('./routerProjects/projectRouter.js');
 
 const server = express();
 const helmet = require('helmet');
@@ -13,6 +13,7 @@ server.use(express.json());
 
 //endpoints
 server.use('/api/actions', actionRouter);
+server.use('/api/projects', projectRouter);
 server.get('/', (req, res) => {
   res.send(`<h2>SCOTT'S SPRINT API!</h2>`);
 });
