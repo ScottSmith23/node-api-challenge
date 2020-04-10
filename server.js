@@ -4,11 +4,13 @@ const actionRouter = require('./routerActions/actionRouter.js');
 const projectRouter = require('./routerProjects/projectRouter.js');
 
 const server = express();
+const cors = require('cors');
 const helmet = require('helmet');
 
 //custom middleware
 server.use(helmet());
 server.use(express.json());
+server.use(cors())
 
 
 //endpoints
