@@ -3,6 +3,7 @@ const mappers = require("./mappers");
 
 module.exports = {
   get,
+  getAll,
   insert,
   update,
   remove,
@@ -33,6 +34,10 @@ function get(id) {
       return projects.map(project => mappers.projectToBody(project));
     });
   }
+}
+
+function getAll() {
+  return db('projects');
 }
 
 function insert(project) {
